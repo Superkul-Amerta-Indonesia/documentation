@@ -2,9 +2,9 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Introduction
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Welcome to Superkul API documentation for developers client of Superkul partners
 
 ## Getting Started
 
