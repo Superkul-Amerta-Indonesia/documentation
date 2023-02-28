@@ -2,22 +2,17 @@
 sidebar_position: 6
 ---
 
-# Congratulations!
+# Trip Planning
 
-You have just learned the **basics of Docusaurus** and made some changes to the **initial template**.
+Proses pembuatan trip dari sebuah pesanan pengiriman. Untuk layanan sameday delivery yang bisa memiliki lebih dari satu pengantaran, pengantaran bisa jadi dipecah menjadi lebih dari satu trip apabila ada salah satu kondisi yang mengharuskannya. Beberapa kondisi tersebut adalah: Berat paket melebihi kapasitas maksimal, volume paket melebihi kapasitas maksimal, serta suhu dari paket berbeda satu dengan yang lain.
 
-Docusaurus has **much more to offer**!
+<p style={{marginLeft: "30px"}}> Route Optimize </p>
 
-Have **5 more minutes**? Take a look at **[versioning](../tutorial-extras/manage-docs-versions.md)** and **[i18n](../tutorial-extras/translate-your-site.md)**.
+<p style={{marginLeft: "30px"}}> Fitur untuk menentukan urutan pengantaran secara otomatis, sehingga jarak dan biaya pengiriman lebih efisien.</p>
 
-Anything **unclear** or **buggy** in this tutorial? [Please report it!](https://github.com/facebook/docusaurus/discussions/4610)
+# Konfirmasi Order 
 
-## What's next?
+Proses pengecekan sebelum sistem melakukan pembuatan invoice order. Dalam proses ini, customer juga dapat memasukkan kode promo jika ada.
 
-- Read the [official documentation](https://docusaurus.io/)
-- Modify your site configuration with [`docusaurus.config.js`](https://docusaurus.io/docs/api/docusaurus-config)
-- Add navbar and footer items with [`themeConfig`](https://docusaurus.io/docs/api/themes/configuration)
-- Add a custom [Design and Layout](https://docusaurus.io/docs/styling-layout)
-- Add a [search bar](https://docusaurus.io/docs/search)
-- Find inspirations in the [Docusaurus showcase](https://docusaurus.io/showcase)
-- Get involved in the [Docusaurus Community](https://docusaurus.io/community/support)
+
+
