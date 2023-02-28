@@ -3,7 +3,6 @@ sidebar_position: 1
 ---
 
 # Introduction
-# Introduction
 
 Superkul merupakan penyedia layanan pengiriman untuk barang yang membutuhkan suhu dingin yang telah didukung oleh platform terintegrasi.Anda dapat menikmati Superkul (membuat pesanan) dengan menggunakan website atau aplikasi Superkul. Pesanan pengiriman Anda akan langsung kami kirim ke driver Superkul yang selalu siap mengirimkan barang Anda selamat sampai tujuan.  Untuk meningkatkan efisiensi pengiriman Anda, kami menyediakan fitur route optimize yang dapat mengurutkan titik pengiriman Anda sehingga dapat memangkas jarak yang ditempuh dan biaya pengiriman Anda.
 
