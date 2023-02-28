@@ -2,46 +2,18 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Introduction
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Superkul merupakan penyedia layanan pengiriman untuk barang yang membutuhkan suhu dingin yang telah didukung oleh platform terintegrasi.Anda dapat menikmati Superkul (membuat pesanan) dengan menggunakan website atau aplikasi Superkul. Pesanan pengiriman Anda akan langsung kami kirim ke driver Superkul yang selalu siap mengirimkan barang Anda selamat sampai tujuan.  Untuk meningkatkan efisiensi pengiriman Anda, kami menyediakan fitur route optimize yang dapat mengurutkan titik pengiriman Anda sehingga dapat memangkas jarak yang ditempuh dan biaya pengiriman Anda.
 
-## Getting Started
 
-Get started by **creating a new site**.
+Superkul menyediakan motor yang telah dilengkapi dengan Superkul Box yang dapat menjaga barang Anda dengan suhu yang dapat diatur dari -22 °C hingga 10 °C. Superkul menyediakan beberapa layanan yang dapat kamu sesuaikan dengan kebutuhan Anda.. Layanan yang disediakan Superkul, antara lain:
+## Instant delivery
+Merupakan layanan pengiriman instan dalam kota dengan menggunakan motor berpendingin Superkul, driver akan menuju ke lokasi pickup dan mengirimkan barang kamu saat itu juga. Layanan ini cocok untuk pengiriman dari 1 titik penjemputan ke 1 titik pengantaran. 
+## Sameday delivery
+Merupakan layanan pengiriman dalam kota dengan menggunakan motor berpendingin Superkul, di mana kamu bisa mengatur jadwal pengiriman sesuai kebutuhan. Kamu juga bisa melakukan pengiriman dari lebih dari 1 titik penjemputan ke beberapa titik pengantaran dalam satu kali order. Layanan ini cocok untuk kamu yang ingin menjadwalkan pengiriman kamu dan ingin mengirimkan paket ke banyak alamat dengan biaya yang lebih hemat. Paketmu akan dikirimkan dalam waktu maximal 6 jam dari waktu penjemputan. 
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
-
-### What you'll need
-
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+## Dedicated Service 
+Merupakan layanan sewa bulanan motor berpendingin Superkul. Layanan ini cocok untuk kamu yang ingin memiliki driver khusus atau dedicated yang selalu siap untuk mengirimkan barang kamu setiap hari. Layanan dedicated minimum untuk 3 bulan sewa. 
+## Superkul truck
+merupakan layanan pengiriman dalam kota Jakarta dan antar kota dalam area Bodetabek, dengan menggunakan truk berpendingin Superkul. Jenis truk yang tersedia adalah L300 berpendingin dengan kapasitas 1 Ton dan CDE berpendingin dengan kapasitas 2 Ton. Kamu bisa menjadwalkan pengiriman dari 1 titik penjemputan sampai dengan 8 titik pengantaran dalam satu kali order. Layanan ini cocok untuk kamu yang ingin mengirimkan barang dalam jumlah besar lebih dari 50 kg.
