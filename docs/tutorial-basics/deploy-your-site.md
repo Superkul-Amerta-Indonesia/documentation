@@ -28,14 +28,6 @@ timePick: hh:mm
    "vehicleType": "CDE"
 ```
 
-
-### Layanan Tambahan
-<p style={{marginLeft: "20px"}}>Layanan Tambahan merupakan layanan yang bersifat opsional yang disediakan oleh Superkul, yang artinya customer tidak harus mengisi layanan tambahan ini.</p>
-
-```md =
-   Nama variable: additionalService
-```
-
 ### Data Penjemputan
 
 <p style={{marginLeft: "20px"}}>Data penjemputan berisi informasi yang diperlukan untuk melakukan penjemputan. </p>
@@ -56,31 +48,43 @@ timePick: hh:mm
 ```
 - Label
 
-  Merupakan informasi untuk menandai data alamat ketika disimpan ke bookmark (bersifat opsional).
+  `["pickLabel"]`
+
+  Merupakan informasi yang berisi alamat singkat untuk  alamat penjemputan.
 
 - Alamat Penjemputan
+
+  `["pickAddress"]`
 
   Informasi yang diisi oleh customer agar driver bisa tahu lokasi penjemputan yang ingin dituju.
 
 - Latitude & Longitude
 
+  `["pickLocation"]`
+
   Titik lokasi yang dapat diperoleh dari proses geocoding.
 
 - Nama Pengirim
+
+  `["senderName"]`
 
   Nama orang yang bertanggung jawab di lapangan pada saat driver sedang melakukan penjemputan.
 
 - Nomor Handphone
 
+  `["pickPhoneNumber"]`
+
   Nomor handphone dari orang yang bertanggung jawab di lapangan pada saat driver sedang melakukan penjemputan.
 
 - Catatan
+
+  `["notes"]`
 
   Catatan merupakan kolom yang dapat diisi oleh customer untuk menyampaikan pesan ke driver yang melakukan penjemputan. Catatan tidak wajib diisi oleh customer (boleh dikosongkan).
 
 - Suhu Paket
 
-  nama variabel: itemTmp
+  `["itemTmp"]`
 
 
 
@@ -102,24 +106,36 @@ timePick: hh:mm
 
 - Label
 
-  Merupakan informasi untuk menandai data alamat ketika disimpan ke bookmark (bersifat opsional).
+  `["dropLabel"]`
 
-- Alamat Penjemputan
+  Merupakan informasi yang berisi alamat singkat untuk  alamat pengantaran.
+
+- Alamat Pengantaran
+
+  `["dropAddress"]`
 
   Informasi yang diisi oleh customer agar driver bisa tahu lokasi penjemputan yang ingin dituju.
 
 - Latitude & Longitude
 
+  `["dropLocation"]`
+
   Titik lokasi yang dapat diperoleh dari proses geocoding.
 
 - Nama Pengirim
+
+  `["receiverName"]`
 
   Nama orang yang bertanggung jawab di lapangan pada saat driver sedang melakukan penjemputan.
 
 - Nomor Handphone
 
+  `["dropPhoneNumber"]`
+
   Nomor handphone dari orang yang bertanggung jawab di lapangan pada saat driver sedang melakukan penjemputan.
 
 - Catatan
 
-  Catatan merupakan kolom yang dapat diisi oleh customer untuk menyampaikan pesan ke driver yang melakukan penjemputan. Catatan tidak wajib diisi oleh customer (boleh dikosongkan).
+  `["notes"]`
+
+  Catatan merupakan kolom yang dapat diisi oleh customer untuk menyampaikan pesan ke driver yang melakukan pengantaran. Catatan tidak wajib diisi oleh customer (boleh dikosongkan).

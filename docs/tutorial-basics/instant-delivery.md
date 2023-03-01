@@ -29,7 +29,6 @@ Instant delivery merupakan layanan pengiriman langsung antar dengan jaminan pake
   "pickUp": [{
 		"notes": "Rumah warna biru yang pintu nya 2 miliar",
 		"senderName": "Faisal Kusuma",
-		"pickPhoneName": "Faisal",
 		"pickPhoneNumber": "0812345468576",
 		"pickAddress": "Gilang Seluler, Jalan Kampung Kelapa, Pabuaran, Bogor Regency, West Java, Indonesia",
 		"pickLabel": "Gilang Seluler",
@@ -39,57 +38,41 @@ Instant delivery merupakan layanan pengiriman langsung antar dengan jaminan pake
 ```
 - Label
 
-  Merupakan informasi untuk menandai data alamat ketika disimpan ke bookmark (bersifat opsional).
+  `["pickLabel"]`
+
+  Merupakan informasi yang berisi alamat singkat untuk  alamat penjemputan.
 
 - Alamat Penjemputan
+
+  `["pickAddress"]`
 
   Informasi yang diisi oleh customer agar driver bisa tahu lokasi penjemputan yang ingin dituju.
 
 - Latitude & Longitude
 
-  Titik lokasi yang dapat diperoleh dari proses geocoding.
-
-- Nama Pengirim
-
-  Nama orang yang bertanggung jawab di lapangan pada saat driver sedang melakukan penjemputan.
-
-- Nomor Handphone
-
-  Nomor handphone dari orang yang bertanggung jawab di lapangan pada saat driver sedang melakukan penjemputan.
-
-- Catatan
-
-  Catatan merupakan kolom yang dapat diisi oleh customer untuk menyampaikan pesan ke driver yang melakukan penjemputan. Catatan tidak wajib diisi oleh customer (boleh dikosongkan).
-
-
-
-### Data Pengantaran
-
-<p style={{marginLeft: "20px"}}>Data pengantaran berisi informasi yang diperlukan untuk melakukan pengantaran paket</p>
-
-- Label
-
-  Merupakan informasi untuk menandai data alamat ketika disimpan ke bookmark (bersifat opsional).
-
-- Alamat Penjemputan
-
-  Informasi yang diisi oleh customer agar driver bisa tahu lokasi penjemputan yang ingin dituju.
-
-- Latitude & Longitude
+  `["pickLocation"]`
 
   Titik lokasi yang dapat diperoleh dari proses geocoding.
 
 - Nama Pengirim
 
+  `["senderName"]`
+
   Nama orang yang bertanggung jawab di lapangan pada saat driver sedang melakukan penjemputan.
 
 - Nomor Handphone
+
+  `["pickPhoneNumber"]`
 
   Nomor handphone dari orang yang bertanggung jawab di lapangan pada saat driver sedang melakukan penjemputan.
 
 - Catatan
 
+  `["notes"]`
+
   Catatan merupakan kolom yang dapat diisi oleh customer untuk menyampaikan pesan ke driver yang melakukan penjemputan. Catatan tidak wajib diisi oleh customer (boleh dikosongkan).
+
+
 
 
 ### Data Paket
@@ -115,23 +98,78 @@ value: makanan; minuman; obat-obatan; Lainnya
 
 - Berat Paket
 
-<p style={{marginLeft: "20px"}}>nama variabel: weight</p>
+`["weight"]`
 
 - Panjang Paket
 
-nama variabel: length
-- Lebah Paket
+`["lenght"]`
 
-nama variabel: width
+
+- Lebar Paket
+
+`["width"]`
+
 - Tinggi Paket
 
-nama variabel: height
+`["height"]`
 
 - Suhu Paket
 
-nama variabel: itemTmp
+`["itemTmp"]`
 
 - Kuantitas Paket
 
-Saat ini kuantitas paket tidak digunakan, sehingga nilai kunatitas paket selalu satu “1”.
-nama variabel: itemQty
+`["itemQty"]`
+
+
+### Data Pengantaran
+
+<p style={{marginLeft: "20px"}}>Data pengantaran berisi informasi yang diperlukan untuk melakukan pengantaran paket</p>
+
+```json
+"dropOff": {
+				"dropNotes": "Ggh",
+				"receiverName": "Ggh",
+				"dropPhoneName": "Ggh",
+				"dropPhoneNumber": "08751213434546",
+				"dropAddress": "Citayam, Bogor Regency, West Java, Indonesia",
+				"dropLabel": "Citayam",
+				"dropLocation": [106.7500025, -6.442421700000001]
+			}
+```
+
+- Label
+
+  `["dropLabel"]`
+
+  Merupakan informasi yang berisi alamat singkat untuk  alamat pengantaran.
+
+- Alamat Pengantaran
+
+  `["dropAddress"]`
+
+  Informasi yang diisi oleh customer agar driver bisa tahu lokasi penjemputan yang ingin dituju.
+
+- Latitude & Longitude
+
+  `["dropLocation"]`
+
+  Titik lokasi yang dapat diperoleh dari proses geocoding.
+
+- Nama Pengirim
+
+  `["receiverName"]`
+
+  Nama orang yang bertanggung jawab di lapangan pada saat driver sedang melakukan penjemputan.
+
+- Nomor Handphone
+
+  `["dropPhoneNumber"]`
+
+  Nomor handphone dari orang yang bertanggung jawab di lapangan pada saat driver sedang melakukan penjemputan.
+
+- Catatan
+
+  `["notes"]`
+
+  Catatan merupakan kolom yang dapat diisi oleh customer untuk menyampaikan pesan ke driver yang melakukan pengantaran. Catatan tidak wajib diisi oleh customer (boleh dikosongkan).
