@@ -1,8 +1,8 @@
 ---
-sidebar_position: 6
+sidebar_position: 4
 ---
 
-# Trip Planning
+# Optimize Route
 
 Proses pembuatan trip dari sebuah pesanan pengiriman. Untuk layanan sameday delivery yang bisa memiliki lebih dari satu pengantaran, pengantaran bisa jadi dipecah menjadi lebih dari satu trip apabila ada salah satu kondisi yang mengharuskannya. Beberapa kondisi tersebut adalah: Berat paket melebihi kapasitas maksimal, volume paket melebihi kapasitas maksimal, serta suhu dari paket berbeda satu dengan yang lain.
 
