@@ -42,16 +42,14 @@ timePick: hh:mm
 
 ```json title="Variable"
   "pickUp": [{
-		"pickUp": {
-		"pickNotes": "",
-		"senderName": "Gagah",
-		"pickPhoneName": "Gagah",
-		"pickPhoneNumber": "6281316009497",
+		"notes": "Rumah warna biru yang pintu nya 2 miliar",
+		"senderName": "Faisal Kusuma",
+		"pickPhoneName": "Faisal",
+		"pickPhoneNumber": "0812345468576",
 		"pickAddress": "Gilang Seluler, Jalan Kampung Kelapa, Pabuaran, Bogor Regency, West Java, Indonesia",
 		"pickLabel": "Gilang Seluler",
 		"pickLocation": [106.8043952, -6.4610789],
-		"itemTmp": 0
-	},
+		"item": [...]
     }]
 ```
 - Label
@@ -87,18 +85,6 @@ timePick: hh:mm
 ### Data Pengantaran
 
 <p style={{marginLeft: "20px"}}>Data pengantaran berisi informasi yang diperlukan untuk melakukan pengantaran paket</p>
-
-```json 
-    "dropOff": [{
-		"dropNotes": "",
-		"receiverName": "IzMie Ij0 LuMuETzz CaHhh HaaLu",
-		"dropPhoneName": "IzMie Ij0 LuMuETzz CaHhh HaaLu",
-		"dropPhoneNumber": "6289506678342",
-		"dropAddress": "Jl. Panjang Arteri Klp. Dua Raya No.8, Kedoya Utara, Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11520",
-		"dropLabel": "Superkul",
-		"dropLocation": [106.7623628, -6.1625573]
-	}]
-```
 
 - Label
 
