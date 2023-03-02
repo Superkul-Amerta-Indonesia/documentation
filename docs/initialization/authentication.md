@@ -7,7 +7,7 @@ After get token from customer dashboard you can pass the authentication token to
 
 example:
 ```http request
-curl --location 'https://sandbox-api.superkul.id/v1/login/google' \
+curl --location 'https://sandbox-api.superkul.id/api' \
 --header 'Accept: application/json' \
 --header 'Content-Type: application/json' \
 --header 'x-auth-token' \
@@ -17,11 +17,9 @@ curl --location 'https://sandbox-api.superkul.id/v1/login/google' \
 ## Information Host
 
 ### Sandbox
-- `web admin` https://sandbox.superkul.id
 - `api` https://sandbox-api.superkul.id
-- `mapi` https://test-api.superkul.id/api
+- `api-test` https://test-api.superkul.id/api
 
 ### Production
-- `web admin`  https://webadmin.superkul.id/
-- `external` https://external.superkul.id/api
+- `api` https://external.superkul.id/api
 
