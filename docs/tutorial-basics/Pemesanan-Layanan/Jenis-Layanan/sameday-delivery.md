@@ -6,6 +6,15 @@ sidebar_position: 2
 
 Sameday delivery merupakan **layanan pengiriman terjadwal** yang dapat mengantarkan lebih dari satu alamat tujuan pengantaran dalam satu pemesanan.
 
+## Information Host
+
+### Sandbox
+- `api-test` https://test-api.superkul.id/api/order
+
+### Production
+- `api` https://external.superkul.id/api/order
+
+
 ### Waktu Pengambilan
 
 <p style={{marginLeft: "30px"}}> Waktu pengambilan untuk layanan sameday delivery setidaknya H+ 2 jam dari waktu pemesanan. Jam pengambilan dimulai dari pukul 08:00 - 16:00 dengan jarak waktu per 30 menit (08:00; 08:30; 09:00; 09:30; 10:00; 10:30; dan seterusnya).
@@ -192,4 +201,104 @@ value: makanan; minuman; obat-obatan; Lainnya
   Catatan merupakan kolom yang dapat diisi oleh customer untuk menyampaikan pesan ke driver yang melakukan pengantaran. Catatan tidak wajib diisi oleh customer (boleh dikosongkan).
 
 
+## Example Request Body:
+
+```http request
+# Header method POST
+
+curl --location 'https://sandbox-api.superkul.id/api/order' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'x-auth-token' \
+```
+
+```js
+
+{
+    "serviceName": "sameday_delivery",
+    "vehicleType": "Bike",
+    "datePick": "2022-02-03",
+    "timePick": "12:55",
+    "optimizeRoute": true,
+    "additionalService": [],
+    "pickUp": [
+        {
+            "notes": "Kantor ",
+            "senderName": "Ifa",
+            "pickLabel": "",
+            "pickPhoneName": "",
+            "pickPhoneNumber": "0811111",
+            "pickAddress": "Mega Plaza",
+            "pickLocation": [
+               106.6179987244524, -6.2114553365783305
+            ],
+            "item": [
+                {
+                    "itemCategory": "Minuman",
+                    "weight": 3, 
+                    "lenght": 11,
+                    "width": 12,
+                    "height": 1,
+                    "itemTmp": 1,
+                    "itemQty": 1,
+                    "dropOff": {
+                        "dropNotes": "Anggrek",
+                        "dropLabel": "",
+                        "receiverName": "Indah",
+                        "dropPhoneName": "",
+                        "dropPhoneNumber": "081111111",
+                        "dropAddress": "Mall Taman Anggrek",
+                        "dropLocation": [
+                           106.85543419022837, -6.229138885971657
+                        ]
+                    }
+                },
+                {
+                    "itemCategory": "Makanan",
+                    "weight": 10,
+                    "lenght": 11,
+                    "width": 12,
+                    "height": 1,
+                    "itemTmp": 1,
+                    "itemQty": 1,
+                    "dropOff": {
+                        "dropNotes": "Anggrek",
+                        "dropLabel": "",
+                        "receiverName": "Indah",
+                        "dropPhoneName": "",
+                        "dropPhoneNumber": "081111111",
+                        "dropAddress": "Mall Taman Anggrek",
+                        "dropLocation": [
+                           106.78418469307513, -6.241519278210899
+                        ]
+                    }
+                },
+                 {
+                    "itemCategory": "Minuman",
+                    "weight": 10,
+                    "lenght": 11,
+                    "width": 12,
+                    "height": 1,
+                    "itemTmp": 1,
+                    "itemQty": 1,
+                    "dropOff": {
+                        "dropNotes": "Anggrek",
+                        "dropLabel": "",
+                        "receiverName": "Indah",
+                        "dropPhoneName": "",
+                        "dropPhoneNumber": "081111111",
+                        "dropAddress": "Mall Taman Anggrek",
+                        "dropLocation": [
+                           106.57502079883348,-6.109522568622347
+                        ]
+                    }
+                }
+                 
+            ]
+        }
+    ]
+}
+```
+
+## Response Example
 
