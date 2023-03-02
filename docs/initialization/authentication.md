@@ -17,7 +17,6 @@ curl --location 'https://sandbox-api.superkul.id/api' \
 ## Information Host
 
 ### Sandbox
-- `api` https://sandbox-api.superkul.id
 - `api-test` https://test-api.superkul.id/api
 
 ### Production
