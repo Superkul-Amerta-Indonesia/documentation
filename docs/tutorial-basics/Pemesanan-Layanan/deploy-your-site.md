@@ -1,24 +1,37 @@
 ---
-sidebar_position: 3
+sidebar_position: 5
 ---
 
-# Instant Delivery
+# Superkul Truck
 
-Instant delivery merupakan layanan pengiriman langsung antar dengan jaminan paket diantar sampai tujuan paling lambat 2 jam.
+Superkul Truck merupakan layanan penglayanan pengiriman Superkul menggunakan truk untuk pengiriman dalam kota maupun luar kota. Saat ini, Superkul truck delivery hanya menjangkau area **JaBoDeTaBek**.
 
+# Jenis Layanan
+
+`serviceName`
+
+- `[superkul_truck];` -->
+
+### Waktu Pengambilan
+
+<p style={{marginLeft: "30px"}}> Waktu pengambilan untuk layanan sameday delivery setidaknya H+ 1 hari dari waktu pemesanan. Jam pengambilan dimulai dari pukul 08:00 - 16:00 dengan jarak waktu per 30 menit (08:00; 08:30; 09:00; 09:30; 10:00; 10:30; dan seterusnya). Waktu pengambilan wajib diisi oleh customer
+</p>
+
+```md title=Format
+datePick: YYYY-MM-DD
+timePick: hh:mm
+```
+```md title="Contoh" {2-3}
+  ---
+	"datePick": "2022-12-06",
+	"timePick": "02:27",
+  ---
+```
 ### Jenis Kendaraan
-<p style={{marginLeft: "20px"}}>Jenis kendaraan yang tersedia untuk layanan sameday delivery hanya motor saja. Jenis kendaraan wajib diisi oleh customer</p>
+<p style={{marginLeft: "20px"}}>Jenis kendaraan yang tersedia untuk layanan sameday delivery hanya CDE saja. Jenis kendaraan wajib diisi oleh customer</p>
 
 ```md =Vehicle-Type
-   "vehicleType": "Bike"
-```
-
-
-### Layanan Tambahan
-<p style={{marginLeft: "20px"}}>Layanan Tambahan merupakan layanan yang bersifat opsional yang disediakan oleh Superkul, yang artinya customer tidak harus mengisi layanan tambahan ini.</p>
-
-```md =
-   Nama variable: additionalService
+   "vehicleType": "CDE"
 ```
 
 ### Data Penjemputan
@@ -27,13 +40,16 @@ Instant delivery merupakan layanan pengiriman langsung antar dengan jaminan pake
 
 ```json title="Variable"
   "pickUp": [{
-		"notes": "Rumah warna biru yang pintu nya 2 miliar",
-		"senderName": "Faisal Kusuma",
-		"pickPhoneNumber": "0812345468576",
+		"pickUp": {
+		"pickNotes": "",
+		"senderName": "Gagah",
+		"pickPhoneName": "Gagah",
+		"pickPhoneNumber": "6281316009497",
 		"pickAddress": "Gilang Seluler, Jalan Kampung Kelapa, Pabuaran, Bogor Regency, West Java, Indonesia",
 		"pickLabel": "Gilang Seluler",
 		"pickLocation": [106.8043952, -6.4610789],
-		"item": [...]
+		"itemTmp": 0
+	},
     }]
 ```
 - Label
@@ -72,70 +88,26 @@ Instant delivery merupakan layanan pengiriman langsung antar dengan jaminan pake
 
   Catatan merupakan kolom yang dapat diisi oleh customer untuk menyampaikan pesan ke driver yang melakukan penjemputan. Catatan tidak wajib diisi oleh customer (boleh dikosongkan).
 
-
-
-
-### Data Paket
-
-<p style={{marginLeft: "20px"}}>Data paket dibutuhkan untuk mengkategorikan apakah paket dikirim dalam satu armada atau tidak berdasarkan suhu, berat, dan volume.</p>
-
-```json title="Variable"
-  "item": [{
-			"itemCategory": "Makanan",
-			"weight": 10,
-			"height": 10,
-			"width": 10,
-			"lenght": 10,
-			"itemTmp": 0,
-			"itemQty": 10,
-			"dropOff": [...]
-      }]
-```
-- Kategori Paket
-
-nama variabel: itemCategoty
-value: makanan; minuman; obat-obatan; Lainnya
-
-- Berat Paket
-
-`["weight"]`
-
-- Panjang Paket
-
-`["lenght"]`
-
-
-- Lebar Paket
-
-`["width"]`
-
-- Tinggi Paket
-
-`["height"]`
-
 - Suhu Paket
 
-`["itemTmp"]`
+  `["itemTmp"]`
 
-- Kuantitas Paket
-
-`["itemQty"]`
 
 
 ### Data Pengantaran
 
 <p style={{marginLeft: "20px"}}>Data pengantaran berisi informasi yang diperlukan untuk melakukan pengantaran paket</p>
 
-```json
-"dropOff": {
-				"dropNotes": "Ggh",
-				"receiverName": "Ggh",
-				"dropPhoneName": "Ggh",
-				"dropPhoneNumber": "08751213434546",
-				"dropAddress": "Citayam, Bogor Regency, West Java, Indonesia",
-				"dropLabel": "Citayam",
-				"dropLocation": [106.7500025, -6.442421700000001]
-			}
+```json 
+    "dropOff": [{
+		"dropNotes": "",
+		"receiverName": "IzMie Ij0 LuMuETzz CaHhh HaaLu",
+		"dropPhoneName": "IzMie Ij0 LuMuETzz CaHhh HaaLu",
+		"dropPhoneNumber": "6289506678342",
+		"dropAddress": "Jl. Panjang Arteri Klp. Dua Raya No.8, Kedoya Utara, Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11520",
+		"dropLabel": "Superkul",
+		"dropLocation": [106.7623628, -6.1625573]
+	}]
 ```
 
 - Label
