@@ -10,7 +10,7 @@ Sameday delivery merupakan **layanan pengiriman terjadwal** yang dapat mengantar
 
 `serviceName`
 
-- `[sameday_delivery];`  -->
+- `[sameday_delivery];` 
 
 ## Information Host
 
@@ -103,6 +103,9 @@ timePick: hh:mm
   `["notes"]`
 
   Catatan merupakan kolom yang dapat diisi oleh customer untuk menyampaikan pesan ke driver yang melakukan penjemputan. Catatan tidak wajib diisi oleh customer (boleh dikosongkan).
+
+
+  
 
 
 
@@ -207,7 +210,20 @@ value: makanan; minuman; obat-obatan; Lainnya
   Catatan merupakan kolom yang dapat diisi oleh customer untuk menyampaikan pesan ke driver yang melakukan pengantaran. Catatan tidak wajib diisi oleh customer (boleh dikosongkan).
 
 
-## Example Sameday :
+## Action
+
+Parameter ini digunakan untuk memberikan aksi pada permintaan yang dikirimkan. Terdapat 2 aksi yang dapat disematkan yaitu ``order`` dan ``check_price``.
+
+ 
+
+``order`` digunakan untuk melakukan proses order kedalam sistem.
+
+ 
+
+``check_price`` digunakan hanya untuk memeriksa harga dari data yang dimasukan.
+
+
+## Example Sameday Order:
 
 ```http request
 # Header method POST
@@ -222,90 +238,654 @@ curl --location 'https://sandbox-api.superkul.id/api/order' \
 
 
 
+{   "action" : "order",
+
+    "externalId": "ORDER-001",
+
+    "serviceName": "sameday_delivery",
+
+    "vehicleType": "Bike",
+
+    "datePick": "2022-11-30",
+
+    "timePick": "12:55",
+
+    "optimizeRoute": false,
+
+    "additionalService": [],
+
+    "pickUp": [
+
+        {
+
+            "notes": "Kantor ",
+
+            "senderName": "Ifa",
+
+            "pickLabel": "",
+
+            "pickPhoneName": "",
+
+            "pickPhoneNumber": "62811111",
+
+            "pickAddress": "Mega Plaza",
+
+            "pickLocation": [
+
+               106.6179987244524, -6.2114553365783305
+
+            ],
+
+            "item": [
+
+                {
+
+                    "itemCategory": "Makanan",
+
+                    "weight": 27,
+
+                    "lenght": 11,
+
+                    "width": 12,
+
+                    "height": 1,
+
+                    "itemTmp": 1,
+
+                    "itemQty": 1,
+
+                    "dropOff": {
+
+                        "dropNotes": "Rumah warna biru",
+
+                        "dropLabel": "",
+
+                        "receiverName": "Indah",
+
+                        "dropPhoneName": "",
+
+                        "dropPhoneNumber": "6281111111",
+
+                        "dropAddress": "Jalan Sawo Jakarta Barat",
+
+                        "dropLocation": [
+
+                           106.85543419022837, -6.229138885971657
+
+                        ]
+
+                    }
+
+                },
+
+                {
+
+                    "itemCategory": "Minuman",
+
+                    "weight": 10,
+
+                    "lenght": 11,
+
+                    "width": 12,
+
+                    "height": 1,
+
+                    "itemTmp": 1,
+
+                    "itemQty": 1,
+
+                    "dropOff": {
+
+                        "dropNotes": "Rumah warna kuning",
+
+                        "dropLabel": "",
+
+                        "receiverName": "Ardi",
+
+                        "dropPhoneName": "",
+
+                        "dropPhoneNumber": "6281111111",
+
+                        "dropAddress": "Mall Taman Anggrek",
+
+                        "dropLocation": [
+
+                           106.78418469307513, -6.241519278210899
+
+                        ]
+
+                    }
+
+                },
+
+                 {
+
+                    "itemCategory": "Minuman",
+
+                    "weight": 10,
+
+                    "lenght": 11,
+
+                    "width": 12,
+
+                    "height": 1,
+
+                    "itemTmp": 1,
+
+                    "itemQty": 1,
+
+                    "dropOff": {
+
+                        "dropNotes": "Rumah sebelah kanan",
+
+                        "dropLabel": "",
+
+                        "receiverName": "Dini",
+
+                        "dropPhoneName": "",
+
+                        "dropPhoneNumber": "6281111111",
+
+                        "dropAddress": "Jalan Panjang Jakarta Barat",
+
+                        "dropLocation": [
+
+                           106.57502079883348,-6.109522568622347
+
+                        ]
+
+                    }
+
+                }
+
+                 
+
+            ]
+
+        }
+
+    ]
+
+}
+
+```
+
+
+## Example Response :
+
+```js
+
 {
-    "externalId": "ORDER-001",
-    "serviceName": "sameday_delivery",
-    "vehicleType": "Bike",
-    "datePick": "2022-11-30",
-    "timePick": "12:55",
-    "optimizeRoute": true,
-    "additionalService": [],
-    "pickUp": [
-        {
-            "notes": "Kantor ",
-            "senderName": "Ifa",
-            "pickLabel": "",
-            "pickPhoneName": "",
-            "pickPhoneNumber": "62811111",
-            "pickAddress": "Mega Plaza",
-            "pickLocation": [
-               106.6179987244524, -6.2114553365783305
-            ],
-            "item": [
-                {
-                    "itemCategory": "Makanan",
-                    "weight": 27,
-                    "lenght": 11,
-                    "width": 12,
-                    "height": 1,
-                    "itemTmp": 1,
-                    "itemQty": 1,
-                    "dropOff": {
-                        "dropNotes": "Rumah warna biru",
-                        "dropLabel": "",
-                        "receiverName": "Indah",
-                        "dropPhoneName": "",
-                        "dropPhoneNumber": "6281111111",
-                        "dropAddress": "Jalan Sawo Jakarta Barat",
-                        "dropLocation": [
-                           106.85543419022837, -6.229138885971657
-                        ]
-                    }
-                },
-                {
-                    "itemCategory": "Minuman",
-                    "weight": 10,
-                    "lenght": 11,
-                    "width": 12,
-                    "height": 1,
-                    "itemTmp": 1,
-                    "itemQty": 1,
-                    "dropOff": {
-                        "dropNotes": "Rumah warna kuning",
-                        "dropLabel": "",
-                        "receiverName": "Ardi",
-                        "dropPhoneName": "",
-                        "dropPhoneNumber": "6281111111",
-                        "dropAddress": "Mall Taman Anggrek",
-                        "dropLocation": [
-                           106.78418469307513, -6.241519278210899
-                        ]
-                    }
-                },
-                 {
-                    "itemCategory": "Minuman",
-                    "weight": 10,
-                    "lenght": 11,
-                    "width": 12,
-                    "height": 1,
-                    "itemTmp": 1,
-                    "itemQty": 1,
-                    "dropOff": {
-                        "dropNotes": "Rumah sebelah kanan",
-                        "dropLabel": "",
-                        "receiverName": "Dini",
-                        "dropPhoneName": "",
-                        "dropPhoneNumber": "6281111111",
-                        "dropAddress": "Jalan Panjang Jakarta Barat",
-                        "dropLocation": [
-                           106.57502079883348,-6.109522568622347
-                        ]
-                    }
-                }
-                 
-            ]
-        }
-    ]
+
+    "data": {
+
+        "order": {
+
+            "_id": "6438b6f757d02e91c90ffa2a",
+
+            "serviceName": "Sameday Delivery",
+
+            "orderNumber": "SD-2023041415fa2a",
+
+            "invoiceNumber": "INV-SD-2023041415fa2a",
+
+            "datePick": "2022-11-30",
+
+            "timePick": "12:55",
+
+            "vehicleType": "Bike",
+
+            "additionalService": [
+
+                {
+
+                    "name": "Handling Fee",
+
+                    "price": 5000,
+
+                    "is_mandatory": 1
+
+                }
+
+            ],
+
+            "customerFirstName": "Faisal",
+
+            "customerLastName": "Aji",
+
+            "customerPhone": "6282210860366",
+
+            "customerEmail": "faisalkusumaaji123@gmail.com",
+
+            "orderStatus": "SCHEDULED",
+
+            "priceTotal": 382500,
+
+            "distanceTotal": 105,
+
+            "durationTotal": 14602,
+
+            "totalDestination": 3,
+
+            "externalId": "ORDER-001"
+
+        },
+
+        "trip": [
+
+            {
+
+                "_id": "6438b6f857d02e91c90ffa2b",
+
+                "tripNumber": "SD-2023041415fa2a-TR0",
+
+                "pick": [
+
+                    {
+
+                        "pickNotes": "Kantor",
+
+                        "senderName": "Ifa",
+
+                        "pickPhoneName": "Ifa",
+
+                        "pickPhoneNumber": "62811111",
+
+                        "pickAddress": "Mega Plaza",
+
+                        "pickLabel": null,
+
+                        "pickLocation": [
+
+                            106.6179987244524,
+
+                            -6.2114553365783305
+
+                        ]
+
+                    }
+
+                ],
+
+                "drop": [
+
+                    {
+
+                        "itemCategory": "Makanan",
+
+                        "weight": 27,
+
+                        "lenght": 11,
+
+                        "width": 12,
+
+                        "height": 1,
+
+                        "itemTmp": 1,
+
+                        "itemQty": 1,
+
+                        "dropOff": {
+
+                            "dropNotes": "Rumah warna biru",
+
+                            "dropLabel": null,
+
+                            "receiverName": "Indah",
+
+                            "dropPhoneName": null,
+
+                            "dropPhoneNumber": "6281111111",
+
+                            "dropAddress": "Jalan Sawo Jakarta Barat",
+
+                            "dropLocation": [
+
+                                106.85543419022837,
+
+                                -6.229138885971657
+
+                            ]
+
+                        }
+
+                    }
+
+                ],
+
+                "distance": 39,
+
+                "duration": 5125,
+
+                "tripStatus": "Menunggu Pembayaran"
+
+            },
+
+            {
+
+                "_id": "6438b6f857d02e91c90ffa2e",
+
+                "tripNumber": "SD-2023041415fa2a-TR1",
+
+                "pick": [
+
+                    {
+
+                        "pickNotes": "Kantor",
+
+                        "senderName": "Ifa",
+
+                        "pickPhoneName": "Ifa",
+
+                        "pickPhoneNumber": "62811111",
+
+                        "pickAddress": "Mega Plaza",
+
+                        "pickLabel": null,
+
+                        "pickLocation": [
+
+                            106.6179987244524,
+
+                            -6.2114553365783305
+
+                        ]
+
+                    }
+
+                ],
+
+                "drop": [
+
+                    {
+
+                        "itemCategory": "Minuman",
+
+                        "weight": 10,
+
+                        "lenght": 11,
+
+                        "width": 12,
+
+                        "height": 1,
+
+                        "itemTmp": 1,
+
+                        "itemQty": 1,
+
+                        "dropOff": {
+
+                            "dropNotes": "Rumah warna kuning",
+
+                            "dropLabel": null,
+
+                            "receiverName": "Ardi",
+
+                            "dropPhoneName": null,
+
+                            "dropPhoneNumber": "6281111111",
+
+                            "dropAddress": "Mall Taman Anggrek",
+
+                            "dropLocation": [
+
+                                106.78418469307513,
+
+                                -6.241519278210899
+
+                            ]
+
+                        }
+
+                    },
+
+                    {
+
+                        "itemCategory": "Minuman",
+
+                        "weight": 10,
+
+                        "lenght": 11,
+
+                        "width": 12,
+
+                        "height": 1,
+
+                        "itemTmp": 1,
+
+                        "itemQty": 1,
+
+                        "dropOff": {
+
+                            "dropNotes": "Rumah sebelah kanan",
+
+                            "dropLabel": null,
+
+                            "receiverName": "Dini",
+
+                            "dropPhoneName": null,
+
+                            "dropPhoneNumber": "6281111111",
+
+                            "dropAddress": "Jalan Panjang Jakarta Barat",
+
+                            "dropLocation": [
+
+                                106.57502079883348,
+
+                                -6.109522568622347
+
+                            ]
+
+                        }
+
+                    }
+
+                ],
+
+                "distance": 66,
+
+                "duration": 9477,
+
+                "tripStatus": "Menunggu Pembayaran"
+
+            }
+
+        ]
+
+    },
+
+    "message": "ok",
+
+    "status": "success"
+
+}
+
+```
+
+## Example Sameday Check Price:
+
+```http request
+# Header method POST
+
+curl --location 'https://sandbox-api.superkul.id/api/order' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'x-auth-token' \
+```
+
+```js
+
+
+
+{   "action" : "check_price",
+
+    "externalId": "ORDER-001",
+
+    "serviceName": "sameday_delivery",
+
+    "vehicleType": "Bike",
+
+    "datePick": "2022-11-30",
+
+    "timePick": "12:55",
+
+    "optimizeRoute": false,
+
+    "additionalService": [],
+
+    "pickUp": [
+
+        {
+
+            "notes": "Kantor ",
+
+            "senderName": "Ifa",
+
+            "pickLabel": "",
+
+            "pickPhoneName": "",
+
+            "pickPhoneNumber": "62811111",
+
+            "pickAddress": "Mega Plaza",
+
+            "pickLocation": [
+
+               106.6179987244524, -6.2114553365783305
+
+            ],
+
+            "item": [
+
+                {
+
+                    "itemCategory": "Makanan",
+
+                    "weight": 27,
+
+                    "lenght": 11,
+
+                    "width": 12,
+
+                    "height": 1,
+
+                    "itemTmp": 1,
+
+                    "itemQty": 1,
+
+                    "dropOff": {
+
+                        "dropNotes": "Rumah warna biru",
+
+                        "dropLabel": "",
+
+                        "receiverName": "Indah",
+
+                        "dropPhoneName": "",
+
+                        "dropPhoneNumber": "6281111111",
+
+                        "dropAddress": "Jalan Sawo Jakarta Barat",
+
+                        "dropLocation": [
+
+                           106.85543419022837, -6.229138885971657
+
+                        ]
+
+                    }
+
+                },
+
+                {
+
+                    "itemCategory": "Minuman",
+
+                    "weight": 10,
+
+                    "lenght": 11,
+
+                    "width": 12,
+
+                    "height": 1,
+
+                    "itemTmp": 1,
+
+                    "itemQty": 1,
+
+                    "dropOff": {
+
+                        "dropNotes": "Rumah warna kuning",
+
+                        "dropLabel": "",
+
+                        "receiverName": "Ardi",
+
+                        "dropPhoneName": "",
+
+                        "dropPhoneNumber": "6281111111",
+
+                        "dropAddress": "Mall Taman Anggrek",
+
+                        "dropLocation": [
+
+                           106.78418469307513, -6.241519278210899
+
+                        ]
+
+                    }
+
+                },
+
+                 {
+
+                    "itemCategory": "Minuman",
+
+                    "weight": 10,
+
+                    "lenght": 11,
+
+                    "width": 12,
+
+                    "height": 1,
+
+                    "itemTmp": 1,
+
+                    "itemQty": 1,
+
+                    "dropOff": {
+
+                        "dropNotes": "Rumah sebelah kanan",
+
+                        "dropLabel": "",
+
+                        "receiverName": "Dini",
+
+                        "dropPhoneName": "",
+
+                        "dropPhoneNumber": "6281111111",
+
+                        "dropAddress": "Jalan Panjang Jakarta Barat",
+
+                        "dropLocation": [
+
+                           106.57502079883348,-6.109522568622347
+
+                        ]
+
+                    }
+
+                }
+
+                 
+
+            ]
+
+        }
+
+    ]
+
 }
 
 ```
@@ -315,34 +895,25 @@ curl --location 'https://sandbox-api.superkul.id/api/order' \
 ```js
 
 {
-    "data": {
-        "_id": "641d42fb40f8fcfbc00c08c2",
-        "serviceName": "Sameday Delivery",
-        "orderNumber": "SD-2023032408c2",
-        "invoiceNumber": "INV-SD-2023032408c2",
-        "datePick": "2022-02-03",
-        "timePick": "12:55",
-        "vehicleType": "Bike",
-        "additionalService": [
-            {
-                "name": "Handling Fee",
-                "price": 5000,
-                "is_mandatory": 1
-            }
-        ],
-        "customerFirstName": "Neji",
-        "customerLastName": "Yuga",
-        "customerPhone": "082213215732",
-        "customerEmail": "yuga@gmail.com",
-        "orderStatus": "SCHEDULED",
-        "priceTotal": 361503,
-        "distanceTotal": 93,
-        "durationTotal": 12868,
-        "totalDestination": 3,
-        "externalId": "ORDER-001"
-    },
-    "message": "ok",
-    "status": "success"
+
+    "data": {
+
+        "duration": 243,
+
+        "eta": "17:28",
+
+        "distance": 105,
+
+        "priceTotal": 382500,
+
+        "totalDrop": 3
+
+    },
+
+    "message": "ok",
+
+    "status": "success"
+
 }
 
 ```
