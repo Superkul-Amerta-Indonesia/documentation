@@ -184,7 +184,7 @@ value: makanan; minuman; obat-obatan; Lainnya
 
 ## Action
 
-Parameter ini digunakan untuk memberikan aksi pada permintaan yang dikirimkan. Terdapat 2 aksi yang dapat disematkan yaitu ``order`` dan ``check_price``.
+Parameter ini digunakan untuk memberikan aksi pada permintaan yang dikirimkan. Terdapat 2 aksi yang dapat disematkan yaitu ``order`` dan ``price_check``.
 
  
 
@@ -192,7 +192,7 @@ Parameter ini digunakan untuk memberikan aksi pada permintaan yang dikirimkan. T
 
  
 
-``check_price`` digunakan hanya untuk memeriksa harga dari data yang dimasukan.
+``price_check`` digunakan hanya untuk memeriksa harga dari data yang dimasukan.
 
 
 
