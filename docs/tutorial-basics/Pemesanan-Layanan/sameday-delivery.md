@@ -212,7 +212,7 @@ value: makanan; minuman; obat-obatan; Lainnya
 
 ## Action
 
-Parameter ini digunakan untuk memberikan aksi pada permintaan yang dikirimkan. Terdapat 2 aksi yang dapat disematkan yaitu ``order`` dan ``check_price``.
+Parameter ini digunakan untuk memberikan aksi pada permintaan yang dikirimkan. Terdapat 2 aksi yang dapat disematkan yaitu ``order`` dan ``price_check``.
 
  
 
@@ -220,7 +220,7 @@ Parameter ini digunakan untuk memberikan aksi pada permintaan yang dikirimkan. T
 
  
 
-``check_price`` digunakan hanya untuk memeriksa harga dari data yang dimasukan.
+``price_check`` digunakan hanya untuk memeriksa harga dari data yang dimasukan.
 
 
 ## Example Sameday Order:
@@ -718,7 +718,7 @@ curl --location 'https://sandbox-api.superkul.id/api/order' \
 
 
 
-{   "action" : "check_price",
+{   "action" : "price_check",
 
     "externalId": "ORDER-001",
 
