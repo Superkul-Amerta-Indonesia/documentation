@@ -210,6 +210,21 @@ value: makanan; minuman; obat-obatan; Lainnya
   Catatan merupakan kolom yang dapat diisi oleh customer untuk menyampaikan pesan ke driver yang melakukan pengantaran. Catatan tidak wajib diisi oleh customer (boleh dikosongkan).
 
 
+### Pelacakan Pesanan
+
+- `api-test` https://external.superkul.id/api/order/{orderId}
+
+- `api` https://external.superkul.id/api/order/{orderId}
+
+Untuk melakukan pelacakan pesanan dalam menggunakan cara seperti dibawah ini:
+
+
+```md =
+   {orderId} = ID order yang didapat ketika melakukan pemesanan
+```
+
+
+
 ## Action
 
 Parameter ini digunakan untuk memberikan aksi pada permintaan yang dikirimkan. Terdapat 2 aksi yang dapat disematkan yaitu ``order`` dan ``price_check``.
@@ -927,6 +942,163 @@ curl --location 'https://sandbox-api.superkul.id/api/order' \
 {
     "message": "driver not available, please try another date and time",
     "status": "other"
+}
+
+```
+
+
+## Example Pelacakan Pesanan Response:
+
+```js
+
+{
+    "data": [
+        {
+            "order": {
+                "_id": "641d42fb40f8fcfbc00c08c2",
+                "serviceName": "Sameday Delivery",
+                "orderNumber": "SD-2023032408c2",
+                "invoiceNumber": "INV-SD-2023032408c2",
+                "datePick": "2022-02-03",
+                "timePick": "12:55",
+                "vehicleType": "Bike",
+                "additionalService": [
+                    {
+                        "name": "Handling Fee",
+                        "price": 5000,
+                        "is_mandatory": 1
+                    }
+                ],
+                "customerFirstName": "Neji",
+                "customerLastName": "Yuga",
+                "customerPhone": "082213215732",
+                "customerEmail": "yuga@gmail.com",
+                "orderStatus": "SCHEDULED",
+                "priceTotal": 361503,
+                "distanceTotal": 93,
+                "durationTotal": 12868,
+                "totalDestination": 3,
+                "externalId": "ORDER-001"
+            },
+            "trip": {
+                "trip 1": [
+                    {
+                        "_id": "641d42fb40f8fcfbc00c08c3",
+                        "tripNumber": "SD-2023032408c2-TR0",
+                        "pick": [
+                            {
+                                "pickNotes": "Kantor",
+                                "senderName": "Ifa",
+                                "pickPhoneName": null,
+                                "pickPhoneNumber": "0811111",
+                                "pickAddress": "Mega Plaza",
+                                "pickLabel": null,
+                                "pickLocation": [
+                                    106.6179987244524,
+                                    -6.2114553365783305
+                                ]
+                            }
+                        ],
+                        "drop": [
+                            {
+                                "itemCategory": "Cinta",
+                                "weight": 27,
+                                "lenght": 11,
+                                "width": 12,
+                                "height": 1,
+                                "itemTmp": 1,
+                                "itemQty": 1,
+                                "dropOff": {
+                                    "dropNotes": "Anggrek",
+                                    "dropLabel": null,
+                                    "receiverName": "Indah",
+                                    "dropPhoneName": null,
+                                    "dropPhoneNumber": "081111111",
+                                    "dropAddress": "Mall Taman Anggrek",
+                                    "dropLocation": [
+                                        106.85543419022837,
+                                        -6.229138885971657
+                                    ]
+                                }
+                            }
+                        ],
+                        "distance": 39,
+                        "duration": 5099,
+                        "tripStatus": "Mencari Driver"
+                    }
+                ],
+                "trip 2": [
+                    {
+                        "_id": "641d42fb40f8fcfbc00c08c6",
+                        "tripNumber": "SD-2023032408c2-TR1",
+                        "pick": [
+                            {
+                                "pickNotes": "Kantor",
+                                "senderName": "Ifa",
+                                "pickPhoneName": null,
+                                "pickPhoneNumber": "0811111",
+                                "pickAddress": "Mega Plaza",
+                                "pickLabel": null,
+                                "pickLocation": [
+                                    106.6179987244524,
+                                    -6.2114553365783305
+                                ]
+                            }
+                        ],
+                        "drop": [
+                            {
+                                "itemCategory": "Cinta",
+                                "weight": 10,
+                                "lenght": 11,
+                                "width": 12,
+                                "height": 1,
+                                "itemTmp": 1,
+                                "itemQty": 1,
+                                "dropOff": {
+                                    "dropNotes": "Anggrek",
+                                    "dropLabel": null,
+                                    "receiverName": "Indah",
+                                    "dropPhoneName": null,
+                                    "dropPhoneNumber": "081111111",
+                                    "dropAddress": "Mall Taman Anggrek",
+                                    "dropLocation": [
+                                        106.78418469307513,
+                                        -6.241519278210899
+                                    ]
+                                }
+                            },
+                            {
+                                "itemCategory": "Cinta",
+                                "weight": 10,
+                                "lenght": 11,
+                                "width": 12,
+                                "height": 1,
+                                "itemTmp": 1,
+                                "itemQty": 1,
+                                "dropOff": {
+                                    "dropNotes": "Anggrek",
+                                    "dropLabel": null,
+                                    "receiverName": "Indah",
+                                    "dropPhoneName": null,
+                                    "dropPhoneNumber": "081111111",
+                                    "dropAddress": "Mall Taman Anggrek",
+                                    "dropLocation": [
+                                        106.57502079883348,
+                                        -6.109522568622347
+                                    ]
+                                }
+                            }
+                        ],
+                        "distance": 54,
+                        "duration": 7769,
+                        "tripStatus": "Mencari Driver"
+                    }
+                ]
+            }
+        }
+    ],
+    "message": "ok",
+    "status": "success"
 }
 
 ```
