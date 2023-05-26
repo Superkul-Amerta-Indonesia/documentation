@@ -212,18 +212,66 @@ value: makanan; minuman; obat-obatan; Lainnya
 
 ### Pelacakan Pesanan
 
-- `api-test` https://external.superkul.id/api/order/{orderId}
-
-- `api` https://external.superkul.id/api/order/{orderId}
-
-Untuk melakukan pelacakan pesanan dalam menggunakan cara seperti dibawah ini:
+Untuk melakukan pembatalan pesanan dalam menggunakan cara seperti dibawah ini:
 
 
-```md =
-   {orderId} = ID order yang didapat ketika melakukan pemesanan
+
+   ``{orderId}`` = ID order yang didapat ketika melakukan pemesanan atau externalId yang dimasukkan ketika membuat pesanan
+
+#### API-TEST
+
+```http request
+## Header method GET
+
+curl
+--location 'https://external.superkul.id/api/order/{orderId}'
+--header 'Accept: application/json'
+--header 'Content-Type: application/json'
+--header 'x-auth-token' 
 ```
 
+#### API
+```http request
+## Header method GET
 
+curl
+--location 'https://external.superkul.id/api/order/{orderId}'
+--header 'Accept: application/json'
+--header 'Content-Type: application/json'
+--header 'x-auth-token'
+```
+
+### Pembatalan
+
+
+Untuk melakukan pembatalan pesanan dalam menggunakan cara seperti dibawah ini:
+
+
+
+   ``{orderId}`` = ID order yang didapat ketika melakukan pemesanan atau externalId yang dimasukkan ketika membuat pesanan
+
+#### API-TEST
+
+```http request
+## Header method GET
+
+curl
+--location 'https://external.superkul.id/api/cancel-order/{orderId}'
+--header 'Accept: application/json'
+--header 'Content-Type: application/json'
+--header 'x-auth-token' 
+```
+
+#### API
+```http request
+## Header method GET
+
+curl
+--location 'https://external.superkul.id/api/cancel-order/{orderId}'
+--header 'Accept: application/json'
+--header 'Content-Type: application/json'
+--header 'x-auth-token'
+```
 
 ## Action
 
