@@ -131,30 +131,30 @@ timePick: hh:mm
 nama variabel: itemCategoty
 value: makanan; minuman; obat-obatan; Lainnya
 
-- Berat Paket
+- Berat Paket,
 
-`["weight"]`
+`["weight"]`  (INT)
 
-- Panjang Paket
+- Panjang Paket,
 
-`["lenght"]`
+`["lenght"]`  (INT)
 
 
-- Lebar Paket
+- Lebar Paket,
 
-`["width"]`
+`["width"]`  (INT)
 
-- Tinggi Paket
+- Tinggi Paket,
 
-`["height"]`
+`["height"]`  (INT)
 
-- Suhu Paket
+- Suhu Paket,
 
-`["itemTmp"]`
+`["itemTmp"]`  (INT)
 
-- Kuantitas Paket
+- Kuantitas Paket,
 
-`["itemQty"]`
+`["itemQty"]`  (INT)
 
 
 ### Data Pengantaran

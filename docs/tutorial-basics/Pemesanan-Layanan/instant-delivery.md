@@ -105,28 +105,29 @@ value: makanan; minuman; obat-obatan; Lainnya
 
 - Berat Paket
 
-`["weight"]`
+`["weight"]` (INT)
+
 
 - Panjang Paket
 
-`["lenght"]`
+`["lenght"]` (INT)
 
 
 - Lebar Paket
 
-`["width"]`
+`["width"]` (INT)
 
 - Tinggi Paket
 
-`["height"]`
+`["height"]` (INT)
 
 - Suhu Paket
 
-`["itemTmp"]`
+`["itemTmp"]` (INT)
 
 - Kuantitas Paket
 
-`["itemQty"]`
+`["itemQty"]` (INT)
 
 
 ### Data Pengantaran
