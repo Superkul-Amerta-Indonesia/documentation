@@ -10,47 +10,54 @@ Sameday delivery merupakan **layanan pengiriman terjadwal** yang dapat mengantar
 
 `serviceName`
 
-- `[sameday_delivery];` 
+- `[sameday_delivery];`
 
 ## Information Host
 
 ### Sandbox
+
 - `api-test` https://test-api.superkul.id/api/order
 
 ### Production
-- `api` https://external.superkul.id/api/order
 
+- `api` https://external.superkul.id/api/order
 
 ### Waktu Pengambilan
 
 <p style={{marginLeft: "30px"}}> Waktu pengambilan untuk layanan sameday delivery setidaknya H+ 2 jam dari waktu pemesanan. Jam pengambilan dimulai dari pukul 08:00 - 16:00 dengan jarak waktu per 30 menit (08:00; 08:30; 09:00; 09:30; 10:00; 10:30; dan seterusnya).
 
 Waktu pengambilan wajib diisi oleh customer
+
 </p>
 
 ```md title=Format
 datePick: YYYY-MM-DD
 timePick: hh:mm
 ```
+
 ```md title="Contoh" {2-3}
-  ---
-	"datePick": "2022-12-06",
-	"timePick": "02:27",
-  ---
+---
+
+    "datePick": "2022-12-06",
+    "timePick": "02:27",
+
+---
 ```
+
 ### Jenis Kendaraan
+
 <p style={{marginLeft: "20px"}}>Jenis kendaraan yang tersedia untuk layanan sameday delivery hanya motor saja. Jenis kendaraan wajib diisi oleh customer</p>
 
 ```md =Vehicle-Type
-   "vehicleType": "Bike"
+"vehicleType": "Bike"
 ```
 
-
 ### Layanan Tambahan
+
 <p style={{marginLeft: "20px"}}>Layanan Tambahan merupakan layanan yang bersifat opsional yang disediakan oleh Superkul, yang artinya customer tidak harus mengisi layanan tambahan ini.</p>
 
 ```md =
-   Nama variable: additionalService
+Nama variable: additionalService
 ```
 
 ### Data Penjemputan
@@ -68,6 +75,7 @@ timePick: hh:mm
 		"item": [...]
     }]
 ```
+
 - Label
 
   `["pickLabel"]`
@@ -104,12 +112,6 @@ timePick: hh:mm
 
   Catatan merupakan kolom yang dapat diisi oleh customer untuk menyampaikan pesan ke driver yang melakukan penjemputan. Catatan tidak wajib diisi oleh customer (boleh dikosongkan).
 
-
-  
-
-
-
-
 ### Data Paket
 
 <p style={{marginLeft: "20px"}}>Data paket dibutuhkan untuk mengkategorikan apakah paket dikirim dalam satu armada atau tidak berdasarkan suhu, berat, dan volume.</p>
@@ -126,6 +128,7 @@ timePick: hh:mm
 			"dropOff": [...]
       }]
 ```
+
 - Kategori Paket
 
 nama variabel: itemCategoty
@@ -133,29 +136,27 @@ value: makanan; minuman; obat-obatan; Lainnya
 
 - Berat Paket,
 
-`["weight"]`  (INT)
+`["weight"]` (INT)
 
 - Panjang Paket,
 
-`["lenght"]`  (INT)
-
+`["lenght"]` (INT)
 
 - Lebar Paket,
 
-`["width"]`  (INT)
+`["width"]` (INT)
 
 - Tinggi Paket,
 
-`["height"]`  (INT)
+`["height"]` (INT)
 
 - Suhu Paket,
 
-`["itemTmp"]`  (INT)
+`["itemTmp"]` (INT)
 
 - Kuantitas Paket,
 
-`["itemQty"]`  (INT)
-
+`["itemQty"]` (INT)
 
 ### Data Pengantaran
 
@@ -209,28 +210,14 @@ value: makanan; minuman; obat-obatan; Lainnya
 
   Catatan merupakan kolom yang dapat diisi oleh customer untuk menyampaikan pesan ke driver yang melakukan pengantaran. Catatan tidak wajib diisi oleh customer (boleh dikosongkan).
 
-
 ### Pelacakan Pesanan
 
-Untuk melakukan pembatalan pesanan dalam menggunakan cara seperti dibawah ini:
+Untuk melakukan pelacakan pesanan dalam menggunakan cara seperti dibawah ini:
 
-
-
-   ``{orderId}`` = ID order yang didapat ketika melakukan pemesanan atau externalId yang dimasukkan ketika membuat pesanan
+`{orderId}` = ID order yang didapat ketika melakukan pemesanan atau externalId yang dimasukkan ketika membuat pesanan
 
 #### API-TEST
 
-```http request
-## Header method GET
-
-curl
---location 'https://external.superkul.id/api/order/{orderId}'
---header 'Accept: application/json'
---header 'Content-Type: application/json'
---header 'x-auth-token' 
-```
-
-#### API
 ```http request
 ## Header method GET
 
@@ -241,14 +228,130 @@ curl
 --header 'x-auth-token'
 ```
 
-### Pembatalan
+#### API
 
+```http request
+## Header method GET
+
+curl
+--location 'https://external.superkul.id/api/order/{orderId}'
+--header 'Accept: application/json'
+--header 'Content-Type: application/json'
+--header 'x-auth-token'
+```
+
+### Pelacakan Pesanan dengan Document External
+
+Untuk melakukan pelacakan pesanan dalam menggunakan cara seperti dibawah ini:
+
+`{docExternal}` = Nomor Document order yang didapat ketika melakukan pemesanan atau yang dimasukkan ketika membuat pesanan
+
+#### Request
+
+```http request
+## Header method GET
+
+curl
+--location 'https://external.superkul.id/api/tracking?so_number='
+--header 'Accept: application/json'
+--header 'Content-Type: application/json'
+--header 'x-auth-token'
+```
+
+#### Response Description
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Field</th>
+      <th scope="col">Type</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Field">tripNumber</td>
+      <td data-label="Type">String</td>
+      <td data-label="Description">Number of Trip</td>
+    </tr>
+    <tr>
+      <td data-label="Field">soNumber</td>
+      <td data-label="Type">String</td>
+      <td data-label="Description">Number of External Document</td>
+    </tr>
+    <tr>
+      <td data-label="Field">status</td>
+      <td data-label="Type">String</td>
+      <td data-label="Description">Status of Trip</td>
+    </tr>
+    <tr>
+      <td data-label="Field">deliveryStatus</td>
+      <td data-label="Type">String</td>
+      <td data-label="Description">Status of Delivery</td>
+    </tr>
+    <tr>
+      <td data-label="Field">reportTime</td>
+      <td data-label="Type">String</td>
+      <td data-label="Description">Report time when Item delivered</td>
+    </tr>
+    <tr>
+      <td data-label="Field">locationReport</td>
+      <td data-label="Type">String</td>
+      <td data-label="Description">Location when Item Delivered</td>
+    </tr>
+    <tr>
+      <td data-label="Field">receiverName</td>
+      <td data-label="Type">String</td>
+      <td data-label="Description">Receiver of Item</td>
+    </tr>
+    <tr>
+      <td data-label="Field">podPhoto1</td>
+      <td data-label="Type">String</td>
+      <td data-label="Description">Photo when Item Delivered</td>
+    </tr>
+    <tr>
+      <td data-label="Field">driverName</td>
+      <td data-label="Type">String</td>
+      <td data-label="Description">Name of Driver</td>
+    </tr>
+    <tr>
+      <td data-label="Field">driverVehicleNumber</td>
+      <td data-label="Type">String</td>
+      <td data-label="Description">Number of vehicle</td>
+    </tr>
+    <tr>
+      <td data-label="Field">requestTime</td>
+      <td data-label="Type">String</td>
+      <td data-label="Description">Time of request Endpoint</td>
+    </tr>
+    <tr>
+      <td data-label="Field">temp</td>
+      <td data-label="Type">String</td>
+      <td data-label="Description">Temperature of Item</td>
+    </tr>
+    <tr>
+      <td data-label="Field">liveTemp</td>
+      <td data-label="Type">String</td>
+      <td data-label="Description">Live Temperature of Vehicle</td>
+    </tr>
+    <tr>
+      <td data-label="Field">liveTemp</td>
+      <td data-label="Type">String</td>
+      <td data-label="Description">Live Temperature of Vehicle</td>
+    </tr>
+    <tr>
+      <td data-label="Field">liveLocationDriver</td>
+      <td data-label="Type">String</td>
+      <td data-label="Description">Live Location of Driver</td>
+    </tr>
+  </tbody>
+</table>
+
+### Pembatalan
 
 Untuk melakukan pembatalan pesanan dalam menggunakan cara seperti dibawah ini:
 
-
-
-   ``{orderId}`` = ID order yang didapat ketika melakukan pemesanan atau externalId yang dimasukkan ketika membuat pesanan
+`{orderId}` = ID order yang didapat ketika melakukan pemesanan atau externalId yang dimasukkan ketika membuat pesanan
 
 #### API-TEST
 
@@ -259,10 +362,11 @@ curl
 --location 'https://external.superkul.id/api/cancel-order/{orderId}'
 --header 'Accept: application/json'
 --header 'Content-Type: application/json'
---header 'x-auth-token' 
+--header 'x-auth-token'
 ```
 
 #### API
+
 ```http request
 ## Header method GET
 
@@ -275,16 +379,11 @@ curl
 
 ## Action
 
-Parameter ini digunakan untuk memberikan aksi pada permintaan yang dikirimkan. Terdapat 2 aksi yang dapat disematkan yaitu ``order`` dan ``price_check``.
+Parameter ini digunakan untuk memberikan aksi pada permintaan yang dikirimkan. Terdapat 2 aksi yang dapat disematkan yaitu `order` dan `price_check`.
 
- 
+`order` digunakan untuk melakukan proses order kedalam sistem.
 
-``order`` digunakan untuk melakukan proses order kedalam sistem.
-
- 
-
-``price_check`` digunakan hanya untuk memeriksa harga dari data yang dimasukan.
-
+`price_check` digunakan hanya untuk memeriksa harga dari data yang dimasukan.
 
 ## Example Sameday Order:
 
@@ -472,7 +571,6 @@ curl --location 'https://sandbox-api.superkul.id/api/order' \
 }
 
 ```
-
 
 ## Example Response :
 
@@ -981,9 +1079,7 @@ curl --location 'https://sandbox-api.superkul.id/api/order' \
 
 ```
 
-
-## Example Driver not Available or Schedule Response: 
-
+## Example Driver not Available or Schedule Response:
 
 ```js
 
@@ -993,7 +1089,6 @@ curl --location 'https://sandbox-api.superkul.id/api/order' \
 }
 
 ```
-
 
 ## Example Pelacakan Pesanan Response:
 
